@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>תרומה</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>תמיכה בספר</h1>
+    <p>{{ donate|replace('\n', '<br>')|safe }}</p>
+
+    <form action="https://www.paypal.com/donate" method="post" target="_blank">
+        <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL" />
+        <input type="hidden" name="currency_code" value="ILS" />
+        <input type="submit" value="תרום עם PayPal">
+    </form>
+
+    <a href="/">חזרה לדף הבית</a>
+</body>
+</html>

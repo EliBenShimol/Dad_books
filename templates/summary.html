@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>תקציר</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>תקציר הספר</h1>
+    <p>{{ summary|replace('\n', '<br>')|safe }}</p>
+    <a href="/">חזרה לדף הבית</a>
+</body>
+</html>
