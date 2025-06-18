@@ -1,13 +1,21 @@
-<!DOCTYPE html>
-<html lang="he">
+<!doctype html>
+<html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <title>תקציר</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>תקציר הספר</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>תקציר הספר</h1>
-    <p>{{ summary|replace('\n', '<br>')|safe }}</p>
-    <a href="/">חזרה לדף הבית</a>
+  <div class="container">
+    <h1>תקציר</h1>
+    <div class="content-box">
+      {{ summary}}
+    </div>
+    <div class="text-center mt-4">
+      <a href="{{ url_for('index') }}" class="btn btn-secondary btn-custom">חזרה</a>
+    </div>
+  </div>
 </body>
 </html>

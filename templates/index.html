@@ -1,19 +1,30 @@
-<!DOCTYPE html>
-<html lang="he">
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>הספר של אבא</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <head>
     <meta charset="UTF-8">
     <title>{{ title }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+  <div class="container text-center">
+
     <h1>{{ title|replace('\n', '<br>')|safe }}</h1>
     <p>{{ intro|replace('\n', '<br>')|safe }}</p>
 
-    <img src="{{ url_for('static', filename='cover.jpg') }}" alt="עטיפת הספר" style="max-width: 300px; border-radius: 12px; margin: 20px auto; display: block;">
+    
+    <img src="{{ url_for('static', filename='cover.jpg') }}" alt="כריכת הספר" class="book-cover">
 
-    <div style="text-align: center;">
-        <a href="/summary">קרא תקציר</a>
-        <a href="/donate">תרום</a>
+    <div class="d-grid gap-3 mt-4">
+      <a href="{{ url_for('donate') }}" class="btn btn-warning btn-custom">☕ תרומה</a>
+      <a href="{{ url_for('summary') }}" class="btn btn-success btn-custom">📖 תקציר</a>
     </div>
+  </div>
 </body>
 </html>
